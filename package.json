@@ -2,7 +2,8 @@
   "name": "orm-example",
   "version": "1.0.0",
   "description": "demo project for interacting with MySQL through Sequelize ORM library",
-  "main": "server.js",
+  "main": "booking-model.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
