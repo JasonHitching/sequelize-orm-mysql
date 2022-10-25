@@ -29,24 +29,15 @@ const Booking = sequelize.define(
  * Method for instantiating database connection to app,
  * authenticating success / failure and logging SQL commands
  */
-sequelize
-  .sync({ logging: console.log, force: true, timestamps: false })
-  .then(() => {
-    seedData();
-  })
-  .then(() => {
-    console.log("Connection has been established!");
-  })
-  .catch((err) => {
-    console.log("Uhh ohhh, unable to connect to db ", err);
-  });
-
-function seedData() {
-  for (let booking of bookingData) {
-    console.log(booking.title);
-    Booking.create({
-      title: booking.title,
-      content: booking.content,
+(async () => {
+  try {
+    await sequelize.sync({
+      logging: console.log,
+      force: true,
     });
+    console.log("Connection has been established!");
+    await Booking.bulkCreate(bookingData);
+  } catch (err) {
+    console.log("uh ohhhh: ", err);
   }
-}
+})();
