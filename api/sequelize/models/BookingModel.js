@@ -51,7 +51,7 @@ async function selectAll() {
 /**
  * Find specific rows based on passed param
  * ( SELECT * FROM bookings WHERE title = {titleVal param} )
- * @param {value of desired title} titleVal
+ * @param {titleVal} .. title to search for
  */
 async function findSpecific(titleVal) {
   console.log("\n\nSELECT * FROM bookings WHERE title = {titleVal param}\n");
@@ -65,6 +65,18 @@ async function findSpecific(titleVal) {
 }
 
 /**
+ * Method for adding a single dB row
+ * @param {*} bookingTitle
+ * @param {*} bookingContent
+ */
+async function insertBooking(bookingTitle, bookingContent) {
+  await Booking.create({
+    title: bookingTitle,
+    content: bookingContent,
+  });
+}
+
+/**
  * Stringify a returned query result to console
  * @param {query result} output
  */
@@ -73,3 +85,4 @@ function stringifyResult(output) {
 }
 
 initialiseDB();
+

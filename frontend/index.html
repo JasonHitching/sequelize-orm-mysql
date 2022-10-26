@@ -15,17 +15,18 @@
             <form>
                 <div class="mb-3">
                     <label for="bookingTypeInput" class="form-label">Booking Type</label>
-                    <input type="text" class="form-control" id="bookingTypeInput">
+                    <input type="text" class="form-control" id="bookingTypeInput" required>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Input descriptive content here" id="contentTextArea"></textarea>
+                    <textarea class="form-control" placeholder="Input descriptive content here" id="contentTextArea" required></textarea>
                     <label for="contentTextArea">Descriptive content</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+    </div>
 </body>
-
+<script type="module" src="./js/index.js"></script>
 <style>
 #contentTextArea {
     height: 100px;
