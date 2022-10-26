@@ -2,8 +2,11 @@
 
 ## About
 - Uses Sequelize ORM to:
-  - Model MySQL table
-  - Query MySQL db
+
+  - [x] Model MySQL table
+  - [x] Populate table with data
+  - [x] Query MySQL db
+  - []  Frontend UI (incoming)
   
 ## How to use the project
 - Instance of a local host database connection, running in MySQL
