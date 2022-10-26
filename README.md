@@ -16,5 +16,6 @@
   - Local instance MySQL:
     - username ('root' unless changed when starting connection)
     - password (whatever you set up when configuring)
-  
-- Once all the initial setup is complete executing `node booking-model.js from within 'api\sequelize\models\booking-model.js' will execute the program.
+- npm install to install all required packages
+
+Once all the initial setup is complete executing `node booking-model.js` from within 'api\sequelize\models\booking-model.js' will execute the program.
