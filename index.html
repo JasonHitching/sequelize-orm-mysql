@@ -9,20 +9,26 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-        <div class="row w-25 m-3">
-            <h1 class="mb-4 display-6">Super Fun Booking Input</h1>
-            <div class="column border p-3">
-                <form>
-                    <div class="mb-3">
-                        <label for="bookingTypeInput" class="form-label">Booking Type</label>
-                        <input type="text" class="form-control" id="bookingTypeInput">
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Input descriptive content here" id="contentTextArea"></textarea>
-                        <label for="contentTextArea">Descriptive content</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+    <div class="row w-25 m-3">
+        <h1 class="mb-4 display-6">Super Fun Booking Input</h1>
+        <div class="column border p-3">
+            <form>
+                <div class="mb-3">
+                    <label for="bookingTypeInput" class="form-label">Booking Type</label>
+                    <input type="text" class="form-control" id="bookingTypeInput">
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Input descriptive content here" id="contentTextArea"></textarea>
+                    <label for="contentTextArea">Descriptive content</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 </body>
+
+<style>
+#contentTextArea {
+    height: 100px;
+}
+</style>
 </html>
