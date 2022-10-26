@@ -1,12 +1,12 @@
 # Using Sequelize as an Object Relational Mapper
 
 ## About
-- Uses Sequelize ORM to:
-
-  - [x] Model MySQL table
-  - [x] Populate table with data
-  - [x] Query MySQL db
-  - []  Frontend UI (incoming)
+- Includes:
+    
+    - Model MySQL table :heavy_check_mark:
+    - Populate table with data :heavy_check_mark:
+    - Query MySQL db :heavy_check_mark:
+    - Frontend UI (incoming) :hammer:
   
 ## How to use the project
 - Instance of a local host database connection, running in MySQL
