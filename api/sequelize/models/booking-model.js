@@ -1,20 +1,12 @@
-import bookingData from "./booking-data.js";
-import { Sequelize, DataTypes } from "sequelize";
-
-/**
- * Instantiate sequelize object
- * with required args
- */
-const sequelize = new Sequelize("bookings_db", "root", "root1234", {
-  host: "127.0.0.1",
-  dialect: "mysql",
-});
+import bookingData from "../data/booking-data.js";
+import dbInstance from "../../server/config/database.js";
+import { DataTypes } from "sequelize";
 
 /**
  * Define our 'Model' (table) & columns
  * Prevent auto timestamping
  */
-const Booking = sequelize.define(
+const Booking = dbInstance.define(
   "Booking",
   {
     title: DataTypes.STRING(150),
@@ -31,7 +23,8 @@ const Booking = sequelize.define(
  */
 let initialiseDB = async () => {
   try {
-    await sequelize.sync({
+    // Sequelize model with db tables
+    await dbInstance.sync({
       logging: console.log,
       force: true,
     });
@@ -41,6 +34,7 @@ let initialiseDB = async () => {
     const specificResult = await findSpecific("Physio");
     stringifyResult(specificResult);
   } catch (err) {
+    // dB sync unsuccessful!
     console.log("uh ohhhh: ", err);
   }
 };
