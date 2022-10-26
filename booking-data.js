@@ -1,6 +1,6 @@
 let bookingData = [
   {
-    title: "Physio for my bad back",
+    title: "Physio",
     content: "Wish I had a better chair",
   },
   {

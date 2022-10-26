@@ -29,15 +29,53 @@ const Booking = sequelize.define(
  * Method for instantiating database connection to app,
  * authenticating success / failure and logging SQL commands
  */
-(async () => {
+let initialiseDB = async () => {
   try {
     await sequelize.sync({
       logging: console.log,
       force: true,
     });
-    console.log("Connection has been established!");
     await Booking.bulkCreate(bookingData);
+    const allValues = await selectAll();
+    stringifyResult(allValues);
+    const specificResult = await findSpecific("Physio");
+    stringifyResult(specificResult);
   } catch (err) {
     console.log("uh ohhhh: ", err);
   }
-})();
+};
+
+/**
+ * Select all rows from the data
+ * ( SELECT * FROM bookings; )
+ */
+async function selectAll() {
+  console.log("\n\nSELECT * FROM .. \n");
+  return Booking.findAll();
+}
+
+/**
+ * Find specific rows based on passed param
+ * ( SELECT * FROM bookings WHERE title = {titleVal param} )
+ * @param {value of desired title} titleVal
+ */
+async function findSpecific(titleVal) {
+  console.log("\n\nSELECT * FROM bookings WHERE title = {titleVal param}\n");
+  const specifiedFind = Booking.findAll({
+    where: {
+      title: titleVal,
+    },
+  });
+
+  return specifiedFind;
+}
+
+/**
+ * Stringify a returned query result to console
+ * @param {query result} output
+ */
+function stringifyResult(output) {
+  console.log("\n" + JSON.stringify(output));
+}
+
+initialiseDB();
