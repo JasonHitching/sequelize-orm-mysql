@@ -21,4 +21,4 @@
     - `yourPassword` - Your MySQL password (whatever you set up when configuring)
 - `npm install` to install all required packages
  
-If all initial setup is completed, executing `node booking-model.js` from within the `api\sequelize\models\booking-model.js` directory will execute the program.
+If all initial setup is completed, executing `node BookingModel.js` from within the `api\sequelize\models\BookingModel.js` directory will execute the program.
